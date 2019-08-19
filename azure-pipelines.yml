@@ -1,0 +1,13 @@
+
+trigger:
+- master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+- task: katalonTask@0
+  displayName: 'Execute Katalon Studio project'
+  inputs:
+    version: '6.2.0'
+    executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/Gas Test Suite"'
